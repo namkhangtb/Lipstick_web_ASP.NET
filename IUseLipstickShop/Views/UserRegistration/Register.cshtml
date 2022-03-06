@@ -1,0 +1,84 @@
+﻿@model IUseLipstickShop.Models.UserRegistrationModel
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/css/Dang-ky.css">
+</head>
+<div class="layout-2">
+    <div class="tieu-de">
+        <h1 class="h1-dau">Create Account</h1>
+    </div>
+</div>
+
+<div class="main" style="height: 925px">
+    <div class="box">
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group labelInputArea">
+                <label>User Name</label><br>
+                <div class="col-md-10">
+                    @Html.TextBoxFor(Model => Model.UserName, new { @class = "text", @placeholder = "User Name", @autofocus = "autofocus" })
+                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group labelInputArea">
+                <label>Password</label><br>
+                <div class="col-md-10">
+                    @Html.PasswordFor(Model => Model.PassWord, new { @class = "text", @placeholder = "Password" })
+                    @Html.ValidationMessageFor(model => model.PassWord, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group labelInputArea">
+                <label>Confirm Password</label><br>
+                <div class="col-md-10">
+                    @Html.PasswordFor(Model => Model.ConfirmPassWord, new { @class = "text", @placeholder = "Confirm Password" })
+                    @Html.ValidationMessageFor(model => model.ConfirmPassWord, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group labelInputArea">
+                <label>Phone</label><br>
+                <div class="col-md-10">
+                    @Html.TextBoxFor(Model => Model.Phone, new { @class = "text", @placeholder = "Phone" })
+                    @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group labelInputArea">
+                <label>First Name</label><br>
+                <div class="col-md-10">
+                    @Html.TextBoxFor(Model => Model.FirstName, new { @class = "text", @placeholder = "First Name" })
+                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group labelInputArea">
+                <label>Last Name</label><br>
+                <div class="col-md-10">
+                    @Html.TextBoxFor(Model => Model.LastName, new { @class = "text", @placeholder = "Last Name" })
+                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <p>
+                    <input type="submit" name="action" id="submit" value="Create" />
+                </p>
+            </div>
+        }
+        @Html.ActionLink("Cancel", "Index", "UserLogin")
+    </div>
+</div>

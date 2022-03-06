@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Models.Framework.Cart>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section jsFooter{
+    <script src="~/Content/js/CartControler.js"></script>
+    @*<script> window.addEventListener("load", function () {
+                loaddata();
+        })</script>*@
+}
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/css/Your-cart.css">
+</head>
+<body>
+    <div class="body_main">
+        <div class="content">
+            <div class="tieu-de">
+                <br>
+                <p>Your Cart</p>
+            </div>
+            <div class="main">
+                <table style="width: 100%;border-bottom: 1px solid black">
+                    <thead>
+                        <tr style="border: 1px solid red;">
+                            <th style="width: 50%;height: 80px;">PRODUCT</th>
+                            <th style="width: 20%;height: 80px;">PRICE</th>
+                            <th style="width: 20%;height: 80px;">QUANTITY</th>
+                            <th style="width: 10%;height: 80px;">TOTAL</th>
+                        </tr>
+                    </thead>
+                    <tbody class="js__cart-content">
+                        
+                    </tbody>
+
+                </table>
+                <div class="main2">
+                    <div class="main2-1">
+                        <h3>Add a note to your order</h3>
+                        <input style="height: 50px;width: 400px;border-radius: 10px; border:1px solid black" type="text" name="">
+                    </div>
+                    <div class="main2-1">
+                        <div style="flex-direction:row;margin-left:50%">
+                            <h4 style="float:left">Total : </h4>
+                            <h4 style="float:left" class="total-checkout">---------------</h4>
+                            <h4 style="float:left">€</h4>
+                        </div>
+                        <br />
+                        <h4>
+                            Payments Secured by Authipay by AIBMS
+                            VAT included. Shipping calculated at checkout.
+                        </h4>
+
+                        <div style="display: flex; float: right;">
+                            <button style="background-color: #F5CFD1; height: 50px; width: 100px; margin-top: 20px; border-radius: 5px;" @*data-id="@User.Identity.Name"*@ class="checkout" type="submit">
+                                CHECK OUT
+                            </button>
+                            <button style="background-color: #F5CFD1; height: 50px; width: 100px; margin-top: 20px; margin-left: 20px; border-radius: 5px;" @*data-id="@User.Identity.Name"*@ class="make-order" type="submit">
+                                Make Order
+                            </button>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+

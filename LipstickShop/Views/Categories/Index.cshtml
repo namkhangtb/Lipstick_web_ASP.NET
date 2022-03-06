@@ -1,0 +1,70 @@
+﻿<!-- Thêm thư viện -->
+@model PagedList.IPagedList<Models.Framework.Category>
+@using PagedList.Mvc;
+<!-- Kết thúc-->
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+<div style="margin:5%">
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Alias
+            </th>
+            <th>
+                ParentID
+            </th>
+            <th>
+                Createddate
+            </th>           
+            <th>
+                Status
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Alias)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ParentID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Createddate)
+                </td>               
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })|
+                </td>
+            </tr>
+        }
+    </table>
+    <div style="text-align: center">
+        <!-- Thêm mã phân trang -->
+        <br />
+        Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+
+        <!-- Kết thúc -->
+    </div>
+    <div style="margin-left:50%">
+        @Html.PagedListPager(Model, page => Url.Action("Index",
+        new { page }))
+    </div>
+</div>

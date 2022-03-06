@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<style>
+    .search {
+    }
+</style>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="~/Content/css/Search.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/css/Layout.css">
+
+</head>
+<body>
+    <div class="ssc2021">
+        <div style="margin-left:40%">
+            @Html.ActionLink("Shop the new collections for SS2021 - Click here!", "Index", "Events")
+        </div>
+    </div>
+    <div class="layout-main">
+        <div class="bia-1">
+            <div class="logo">
+                <a href="@Url.Action("Index", "Home")">
+                    <img src="@Url.Content("~/Content/img/logo.jpg")">
+                </a>
+            </div>
+        </div>
+        <div class="bia-2">
+            <div class="logo-2">
+                <a href="#"><img onclick="openSearch()" src="~/Content/img/seach.jpg"></a>
+                <!-- div script search -->
+                <div id="myOverlay" class="overlay" style="z-index:5">
+                    <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
+                    <div class="overlay-content">
+                        @*<form>
+                            <input type="text" placeholder="Search.." name="search">
+                            <button type="submit" style="width: 110px;height: 50px;">SEACH</button>
+                        </form>*@
+                        @using (Html.BeginForm("Search", "Home", FormMethod.Get, new { @class = "d-inline-flex" }))
+                        {
+                            <input type="text" id="form1" placeholder="Search.." class="form-control" name="TenSP" />
+                            <button type="submit" class="btn btn-primary" style="width: 110px;height: 50px;">Search</button>            
+                         }
+
+                    </div>
+                </div>
+                <script language="javascript" src="~/Content/js/Search.js"></script>
+                <!--  -->
+
+                <a href="/Carts/Index"><img src="~/Content/img/gio.jpg"></a>
+                @if (@User.Identity.Name == "")
+                {
+                    <a href="/UserLogin/Index"><img src="~/Content/img/nguoi.jpg"></a>
+                }
+                else
+                {
+                    <div style="margin-bottom:5px">
+                        <span>Hello</span><a style="margin-left:5px">@User.Identity.Name</a><span style="margin-left:5px">@Html.ActionLink("Đăng Xuất", "Logout", "UserLogin")</span>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    @{
+        Html.RenderAction("RenderMenu", "Home");
+    }
+    <!-- THIS THING -->
+    @RenderBody()
+    <!-- THIS THING -->
+    <div class="layout-3" style="background-color: #F5CFD1; width: 100%; display:flex">
+        <div class="layout-3-1">
+            <h1 class="h1-cuoi">Quick links</h1>
+
+            <h5 class="h5-cuoi">
+                <a class="link" href="./The-new.html">The News</a><br>
+                @Html.ActionLink("Visit Our Stores", "Contact", "Contact") <br />
+                <a class="link" href="#">Seach</a><br>
+                <a class="link" href="#">FAQs</a><br>
+                <a class="link" href="#">Return & Refunds</a>
+            </h5>
+        </div>
+
+        <div class="layout-3-2">
+            <h1 class="h1-cuoi">Subscribe To Our Mailing List!</h1><br>
+            <form action="#" method="get">
+                <input class="tim-kiem" type="text" name="" placeholder="Email address">
+            </form>
+
+            <div class="dangky">
+                <a href="#"><h3 class="h3-cuoi">SUBSCRIBE</h3></a>
+            </div>
+        </div>
+
+        <div class="layout-3-3">
+            <h1 class="h1-cuoi">Lipstick Clothing Ireland</h1>
+            <h5 class="h5-cuoi">Contact <br> quannm2812@gmail.com</h5>
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    @RenderSection("jsFooter", required: false)
+</body>
+</html>

@@ -1,0 +1,31 @@
+﻿@model PagedList.IPagedList<Models.Framework.Product>
+@using PagedList.Mvc;
+<br />
+<br />
+
+
+<div style="height: 500px; background-color: #fff">
+    <div style="width: 70%; height:30px; margin: 0 auto; border-bottom: 1px #30636b solid;">
+        <span style="font-size:24px;">JEAN</span>
+    </div>
+    <div class="view" style="width:80%; margin: 0 auto;">
+        <ul style="margin-left: 155px;">
+            @foreach (var item in Model)
+            {
+                <li>
+                    <div class="scarves">
+                        <a type="submit" class="hover"
+                           href="@Url.Action("Details", "Events", new { id = item.Id })">
+                            <img style="height:300px" src="~/Content/img/@Html.DisplayFor(modelItem => item.Images)">
+                            <h3 class="h3-main"> @Html.DisplayFor(modelItem => item.Name)</h3>
+                        </a>
+                        <img style="float: left; margin-left: 5px" src="~/Content/img/new.jpg" width="50px">
+                        <b><p style="float: left; margin-left: 5px ">€ @Html.DisplayFor(modelItem => item.Price)</p></b>
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+
+

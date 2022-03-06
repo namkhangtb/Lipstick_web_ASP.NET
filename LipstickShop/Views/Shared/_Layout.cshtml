@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="~/Content/css/Dang-nhap.css">
+    <link rel="stylesheet" href="~/Content/css/Search.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/css/Layout.css">
+
+</head>
+<body>
+    <div class="layout-main">
+        <div class="bia-1">
+            <div class="logo">
+                <a href="./Home_page.html"><img src="~/Content/img/logo.jpg"></a>
+            </div>
+        </div>
+        <div class="bia-2">
+            <div class="logo-2">
+                <a href="#"><img onclick="openSearch()" src="~/Content/img/seach.jpg"></a>
+                <!-- div script search -->
+                <div id="myOverlay" class="overlay">
+                    <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
+                    <div class="overlay-content">
+                        <form action>
+                            <input type="text" placeholder="Search.." name="search">
+                            <button type="submit" style="width: 110px;height: 50px;">SEACH</button>
+                        </form>
+                    </div>
+                </div>
+                <script language="javascript" src="~/Content/js/Search.js"></script>
+                <!--  -->
+                
+                
+                <a href="./Dang-nhap.html"><img src="~/Content/img/nguoi.jpg"></a>
+                
+                <a href="./Your-cart.html"><img src="~/Content/img/gio.jpg"></a>
+            </div>
+        </div>
+    </div>
+
+    <div id="menu">
+        <ul>
+            <li>
+                <a href="#"> SHOP ACCESSORIS</a>
+                <ul class="sub-menu">
+                    <li><a href="#"> VIEW ALL</a></li>
+                    <li><a href="#"> SCARVES</a></li>
+                    <li><a href="#"> HANDBAGS</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#"> SHOP BOTTOMS</a>
+                <ul class="sub-menu">
+                    <li><a href="#"> VIEW ALL</a></li>
+                    <li><a href="#"> BOTTOMS</a></li>
+                    <li><a href="#"> JEANS</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#"> SHOP CLOTHING</a>
+                <ul class="sub-menu">
+                    <li><a href="#"> VIEW ALL</a></li>
+                    <li><a href="#"> SWEATERS</a></li>
+                    <li><a href="#"> T-SHIRTS</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#"> SHOP FOOTWEAR</a>
+                <ul class="sub-menu">
+                    <li><a href="#"> VIEW ALL</a></li>
+                    <li><a href="#"> CROCS</a></li>
+                    <li><a href="#"> HEELS</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <!-- THIS THING -->
+    @RenderBody();
+
+
+    <!-- THIS THING -->
+    <div class="layout-3">
+        <div class="layout-3-1">
+            <h1 class="h1-cuoi">Quick links</h1>
+
+            <h5 class="h5-cuoi">
+                <a class="link" href="./The-new.html">The News</a><br>
+                <a class="link" href="./Map.html">Visit Our Stores</a><br>
+                <a class="link" href="#">Seach</a><br>
+                <a class="link" href="#">FAQs</a><br>
+                <a class="link" href="#">Return & Refunds</a>
+            </h5>
+        </div>
+
+        <div class="layout-3-2">
+            <h1 class="h1-cuoi">Subscribe To Our Mailing List!</h1><br>
+            <form action="#" method="get">
+                <input class="tim-kiem" type="text" name="" placeholder="Email address">
+            </form>
+
+            <div class="dangky">
+                <a href="#"><h3 class="h3-cuoi">SUBSCRIBE</h3></a>
+            </div>
+        </div>
+
+        <div class="layout-3-3">
+            <h1 class="h1-cuoi">Lipstick Clothing Ireland</h1>
+            <h5 class="h5-cuoi">Contact <br> quannm2812@gmail.com</h5>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="last_footer">
+            <ul>
+                <img src="~/Content/img/img_mastercard.jpg">
+                <img src="~/Content/img/img_visa.jpg">
+            </ul>
+            <ul class="fb_insta">
+                <img src="~/Content/img/img_fb.jpg">
+                <img src="~/Content/img/img_instagram.jpg">
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

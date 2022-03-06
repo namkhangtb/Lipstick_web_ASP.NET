@@ -1,0 +1,132 @@
+﻿@model PagedList.IPagedList<Models.Framework.Product>
+@using PagedList.Mvc;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/css/Home_page.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/css/Slide_show.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/css/Trang-chu.css">
+    <title>Lipstick Clothing</title>
+
+</head>
+
+<div class="banner_1">
+    <!-- 			 -->
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img src="~/Content/img/banner3.jpg" width="100%">
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img src="~/Content/img/banner1.jpg" width="100%">
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img src="~/Content/img/banner2.jpg" width="100%">
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img src="~/Content/img/banner1.jpg" width="100%">
+        </div>
+        <!-- Nút điều khiển mũi tên-->
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+    </div>
+    <br>
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+    </div>
+    <script language="javascript" src="~/Content/js/banner_slideshow.js"></script>
+</div>
+
+
+@Html.Action("ProductsJK", "Home")
+@Html.Action("ProductsHD", "Home")
+@Html.Action("ProductsJ", "Home")
+
+<div class="banner_2">
+    <img src="~/Content/img/banner2.jpg" width="100%">
+</div>
+
+<br />
+<div class="blog" style="width: 100%; height: 600px">
+    <div class="row" style="width: 70%; height: 50px; margin: 0 auto;">
+        <p style="text-align: center; font-size: 26px; font-weight: 200; font-family: 'Quattrocento Sans', sans-serif; line-height: 1.80857;">Latest Blogs</p>
+    </div>
+    <div class="row" style="width: 70%; height: 550px; margin: 0 auto;display:flex">
+        <div style="width: 33.33%;padding: 20px;">
+            <img src="~/Content/img/blog-img.jpg" width="100%" />
+            <h3 style="text-align: center; padding: 10px; font-family: 'Quattrocento Sans', sans-serif; line-height: 1.80857;">Fusce in augue non nisi fringilla</h3>
+            <div style="display:flex">
+                <div class="option-blog">
+                    <div style="width: 34px; height: 34px; align-items: center;">
+                        <a href="#" data-toggle="tooltip" data-placement="right" title="Likes"><img src="~/Content/img/heart.svg" /></a>
+                    </div>
+                    <div style="width:34px; height:34px;">
+                        <a href="#" data-toggle="tooltip" data-placement="right" title="Views"><img src="~/Content/img/eye.svg" /></a>
+                    </div>
+                    <div style="width:34px; height:34px;">
+                        <a href="#" data-toggle="tooltip" data-placement="right" title="Comments"><img src="~/Content/img/chat-right-text.svg" /></a>
+                    </div>
+                </div>
+                <p style="color: #666666; font-size: 15px; font-family: 'Quattrocento Sans', sans-serif; line-height: 1.80857;">Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
+            </div>
+        </div>
+        <div style="width: 33.33%;padding: 20px;">
+            <img src="~/Content/img/blog-img-01.jpg" width="100%" />
+            <h3 style="text-align: center; padding: 10px; font-family: 'Quattrocento Sans', sans-serif; line-height: 1.80857;">Fusce in augue non nisi fringilla</h3>
+            <div style="display:flex">
+                <div class="option-blog">
+                    <div style="width: 34px; height: 34px; align-items: center;">
+                        <a href="#" data-toggle="tooltip" data-placement="right" title="Likes"><img src="~/Content/img/heart.svg" /></a>
+                    </div>
+                    <div style="width:34px; height:34px;">
+                        <a href="#" data-toggle="tooltip" data-placement="right" title="Views"><img src="~/Content/img/eye.svg" /></a>
+                    </div>
+                    <div style="width:34px; height:34px;">
+                        <a href="#" data-toggle="tooltip" data-placement="right" title="Comments"><img src="~/Content/img/chat-right-text.svg" /></a>
+                    </div>
+                </div>
+                <p style="color: #666666; font-size: 15px; font-family: 'Quattrocento Sans', sans-serif; line-height: 1.80857;">Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
+            </div>
+        </div>
+        <div style="width: 33.33%;padding: 20px;">
+            <img src="~/Content/img/blog-img-02.jpg" width="100%" />
+            <h3 style="text-align: center; padding: 10px; font-family: 'Quattrocento Sans', sans-serif; line-height: 1.80857;">Fusce in augue non nisi fringilla</h3>
+            <div style="display:flex">
+                <div class="option-blog">
+                    <div style="width: 34px; height: 34px; align-items: center;">
+                        <a href="#" data-toggle="tooltip" data-placement="right" title="Likes"><img src="~/Content/img/heart.svg" /></a>
+                    </div>
+                    <div style="width:34px; height:34px;">
+                        <a href="#" data-toggle="tooltip" data-placement="right" title="Views"><img src="~/Content/img/eye.svg" /></a>
+                    </div>
+                    <div style="width:34px; height:34px;">
+                        <a href="#" data-toggle="tooltip" data-placement="right" title="Comments"><img src="~/Content/img/chat-right-text.svg" /></a>
+                    </div>
+                </div>
+                <p style="color: #666666; font-size: 15px; font-family: 'Quattrocento Sans', sans-serif; line-height: 1.80857;">Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br />
+<hr />
+<div style="width: 30%; margin:0 auto;border: 1px solid #000000">
+
+</div>
+<div class="about_us">
+    <p align="center">Follow us on Facebook!</p>
+    <p align="center">Join the community on our Facebook channel</p>
+    <p align="center">lipstick clothes to get news on upcoming</p>
+    <p align="center">online and in-store promotions, unique</p>
+    <p align="center">facebook offers and much more!</p>
+</div>
+
+<br /><br />

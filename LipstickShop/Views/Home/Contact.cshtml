@@ -1,0 +1,35 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/css/Dang-nhap.css">
+</head>
+<div class="layout-2">
+    <div class="tieu-de">
+        <h1 class="h1-dau"> LOGIN </h1>
+    </div>
+</div>
+
+<div class="main">
+    <div class="box">
+        <form method="post" action="" name="login">
+            <div class="labelInputArea">
+                <label for="username">Username</label><br>
+                <input class="text" type="text" name="username" id="username" />
+            </div>
+            <div class="labelInputArea">
+                <label for="password">Password</label><br>
+                <input class="text" type="password" name="password" id="password" />
+            </div>
+            <p>
+                <label id="botton"></label>
+                <input type="submit" name="action" id="submit" value="Login" />
+            </p>
+        </form>
+        <a href="./Forgot.html" id="forgotpass">Forgot your password?</a>
+        <br>
+        <a href="javascript:void(0);" onclick="window.location.href='./Dang-ky.html'">Create account</a>
+
+        <script language="javascript" src="./js/login.js"></script>
+    </div>
+</div>

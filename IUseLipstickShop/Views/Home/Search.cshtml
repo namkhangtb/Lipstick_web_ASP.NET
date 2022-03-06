@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Models.Framework.Product>
+@{ 
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml"; 
+}
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/css/Trang-chu.css">
+</head>
+<!-- THIS THING -->
+<br />
+<div style="width: 80%; margin: auto">
+    <h3 style="background: #ff7675; width: fit-content; border-radius: 10px; padding: 5px;">Đã tìm thấy @Model.Count() sản phẩm</h3>
+</div>
+
+<div style="height: auto; background-color: #ffcccc">
+    <div class="main" style="width:70%; margin: auto;">
+        <div class="view">
+            <ul>
+                @foreach (var item in Model)
+                {
+                    <li style=" border:1px solid;border-radius:20px; z-index: 0">
+                        <div class="scarves">
+                            <a type="submit" class="hover"
+                               href="@Url.Action("Details", "Events", new { id = item.Id })">
+                                <img style="height:300px" src="~/Content/img/@Html.DisplayFor(modelItem => item.Images)">
+                                <h3 class="h3-main"> @Html.DisplayFor(modelItem => item.Name)</h3>
+                            </a>
+                            <img style="float: left; margin-left: 5px" src="~/Content/img/new.jpg" width="50px">
+                            <b><p style="float: left; margin-left: 5px ">€ @Html.DisplayFor(modelItem => item.Price)</p></b>
+                        </div>
+                    </li>
+                 }
+            </ul>
+        </div>
+    </div>
+</div>
+

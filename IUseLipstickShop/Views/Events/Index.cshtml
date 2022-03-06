@@ -1,0 +1,90 @@
+﻿@model PagedList.IPagedList<Models.Framework.Product>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/css/Trang-chu.css">
+</head>
+<!-- THIS THING -->
+<div class="layout-2">
+    <div class="tieu-de">
+        <h1 class="h1-dau">Spring Summer Collection 2021</h1>
+    </div>
+</div>
+
+<div class="HOT-IN">
+    <div class="danh-gia">
+        <h3 class="h3-dau">HOT IN DAY !! </h3>
+    </div>
+</div>
+<div style="height: 1000px; background-color: #ffcccc">
+    <div class="main">
+        <div class="view">
+            <ul>
+                @foreach (var item in Model)
+                 {
+                    <li style=" border:1px solid;border-radius:20px ">
+                        <div class="scarves">
+                            <a type="submit" class="hover"
+                               href="@Url.Action("Details", "Events", new { id = item.Id })">
+                                <img style="height:300px" src="~/Content/img/@Html.DisplayFor(modelItem => item.Images)">
+                                <h3 class="h3-main"> @Html.DisplayFor(modelItem => item.Name)</h3>
+                            </a>
+                                <img style="float: left; margin-left: 5px" src="~/Content/img/new.jpg" width="50px">
+                                <b><p style="float: left; margin-left: 5px ">€ @Html.DisplayFor(modelItem => item.Price)</p></b>
+
+                            
+                        </div>
+                    </li>
+                 }
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Thêm mã phân trang -->
+<div style="text-align:center;height:50px;padding-left:42%">
+    @if ((Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) == 1)
+    {
+        <div style="margin: 10px; float: left ">
+
+        </div>
+    }
+    else
+    {
+        <div style="margin: 10px; float: left">
+            @Html.ActionLink("<<", "Index", new { page = 1 })
+        </div>
+        <div style="margin: 10px; float: left ">
+            <a href="@Url.Action("Index",new { page = (Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber - 1) })"> @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber -1 )</a>
+        </div>
+    }
+
+    
+
+    <div style="margin: 10px; float: left;color:deeppink ">
+        @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+    </div>
+
+
+
+    @if ((Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) == Model.PageCount)
+    {
+        <div style="margin: 10px; float: left ">
+
+        </div>
+    }
+    else
+    {
+        <div style="margin: 10px; float: left ">
+            <a href="@Url.Action("Index",new { page = (Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber + 1) })"> @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber +1 )</a>
+        </div>
+        <div style="margin: 10px; float: left ">
+            @Html.ActionLink(">>", "Index", new { page = Model.PageCount })
+        </div>
+    }
+</div>
+<!-- Kết thúc -->
+<!-- THIS THING -->
